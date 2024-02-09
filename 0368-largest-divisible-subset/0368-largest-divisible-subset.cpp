@@ -5,7 +5,6 @@ public:
         vector<int>dp(n,1);
         sort(nums.begin(),nums.end());
         vector<int>hash(n,0);
-        int ans=1;
         int lastindex=0;
         for(int i=0;i<nums.size();i++){
             hash[i]=i;
@@ -15,8 +14,7 @@ public:
                     hash[i]=j;
                 }
             }
-            if(dp[i]>ans){
-                ans=dp[i];
+            if(dp[i]>dp[lastindex]){
                 lastindex=i;
             }
         }
